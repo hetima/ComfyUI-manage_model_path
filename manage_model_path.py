@@ -65,7 +65,7 @@ def mode_create(raw_name=None):
     save_yaml_with_backup(current_config)
     
     questionary.print(f"作成完了: {section_name}", style="bold fg:green")
-    os.startfile(target_path)
+    # os.startfile(target_path)
 
 def mode_cleanup():
     config_data = get_yaml_data()
