@@ -114,7 +114,7 @@ def mode_cleanup():
         yaml_folder_names = {v.strip('/') for k, v in details.items() if k != "base_path"}
         for folder in actual_subfolders:
             if folder not in yaml_folder_names:
-                new_key = folder.lower()
+                new_key = folder # .lower()
                 details[new_key] = f"{folder}/"
                 questionary.print(f" [+] 新規サブフォルダを登録: {section} -> {new_key}", style="fg:green")
                 updated = True
