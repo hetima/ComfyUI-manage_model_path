@@ -6,7 +6,7 @@ import questionary
 from pathlib import Path
 
 # --- config ---
-# dispaly language. supports "en" or "ja"
+# display language. supports "en" or "ja"
 LANG = "ja"
 # path of extra_model_paths.yaml
 YAML_PATH = Path("G:/path/to/ComfyUI/extra_model_paths.yaml")
