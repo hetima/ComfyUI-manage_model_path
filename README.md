@@ -19,6 +19,8 @@ pip install questionary
 
 フォルダ名を入力すると`BASE_EXTRA_DIR`内にフォルダを作成します。同時にサブフォルダ`checkpoints`, `text_encoders`, `diffusion_models`, `loras`, `vae`を作成します。その構成を`extra_model_paths.yaml`に`_managed_フォルダ名`というセクション名で書き込みます。
 
+フォルダが既に存在する場合は、yamlに登録するか聞いてくるので、許可すると新規セクションを書き込みます。
+
 ## 2: サブフォルダ構成の同期 (Cleanup)
 `extra_model_paths.yaml`を読み込み現在のフォルダ構成に合わせて更新します。yamlに定義が存在しないサブフォルダがあれば`フォルダ名:"フォルダ名/"`で追加するようにします。逆にyamlにあるのにサブフォルダが存在しない場合はyamlから削除します。フォルダ自体がなくなっていれば`_managed_フォルダ名`セクションを削除します。
 
