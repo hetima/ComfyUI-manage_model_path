@@ -16,6 +16,7 @@ BASE_EXTRA_DIR = Path("G:/path/to/extra_models")
 # prefix key of yaml
 TAG = "_managed_"
 # バックアップ（.gitignoreで*.logが定義されているので拡張子を.logにしている）
+# BACKUP_PATH = "" にするとバックアップを作成しない
 BACKUP_PATH = YAML_PATH.with_name("extra_model_paths.yaml.back.log")
 
 # Default Subfolder Structure When Creating New Items
@@ -93,7 +94,7 @@ def get_yaml_data():
 
 def save_yaml_with_backup(data):
     try:
-        if YAML_PATH.exists():
+        if YAML_PATH.exists() and BACKUP_PATH:
             shutil.copy2(YAML_PATH, BACKUP_PATH)
         YAML_PATH.parent.mkdir(parents=True, exist_ok=True)
         with open(YAML_PATH, 'w', encoding='utf-8') as f:
