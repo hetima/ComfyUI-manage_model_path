@@ -7,17 +7,24 @@ from pathlib import Path
 
 # --- config ---
 # display language. supports "en" or "ja"
-LANG = "ja"
-# path of extra_model_paths.yaml
-YAML_PATH = Path("G:/path/to/ComfyUI/extra_model_paths.yaml")
+LANG = "en"
+# path of ComfyUI Root
+CONFY_PATH = "G:/venv/Comfy/ComfyUI"
 # path of your extra models root
-BASE_EXTRA_DIR = Path("G:/path/to/extra_models")
+EXTRA_MODEL_PATH = "G:/venv/_extra_models"
+
+
+
+
+YAML_PATH = Path(CONFY_PATH, "extra_model_paths.yaml")
 
 # prefix key of yaml
 TAG = "_managed_"
+
 # バックアップ（.gitignoreで*.logが定義されているので拡張子を.logにしている）
 # BACKUP_PATH = "" にするとバックアップを作成しない
-BACKUP_PATH = YAML_PATH.with_name("extra_model_paths.yaml.back.log")
+# BACKUP_PATH = YAML_PATH.with_name("extra_model_paths.yaml.back.log")
+BACKUP_PATH = ""
 
 # Default Subfolder Structure When Creating New Items
 DEFAULT_SUB_PATHS = ["checkpoints", "text_encoders", "diffusion_models", "loras", "vae"]
@@ -115,7 +122,7 @@ def mode_create(raw_name=None):
     if not raw_name: return
 
     section_name = f"{TAG}{raw_name}"
-    target_path = BASE_EXTRA_DIR / raw_name
+    target_path = Path(EXTRA_MODEL_PATH) / raw_name
     inner_config = {"base_path": str(target_path).replace("\\", "/")}
 
     if target_path.exists():
