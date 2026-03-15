@@ -219,7 +219,7 @@ class ComfyUIPathManager:
 
             base_path = Path(base_path_str)
             if not base_path.exists():
-                questionary.print(self.L("msg_removed_section").format(section=section), style="fg:red")
+                questionary.print(self.L("msg_removed_section").format(section=section), style="fg:orange")
                 config_data.pop(section)
                 updated = True
                 continue
