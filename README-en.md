@@ -53,8 +53,8 @@ python manage_model_path.py -c "G:/venv/Comfy/ComfyUI" -e "G:/venv/_extra_models
 | `--lang` | `-l` | Display language (en or ja) |
 | `folder_name` | - | Folder name to create directly (optional) |
 
-### Interactive Mode
-
 When launched without arguments, you will be prompted to enter the ComfyUI root path and the extra model root path.
+
+## Screenshot
 
 ![screen](screen.jpg)

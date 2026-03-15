@@ -55,8 +55,8 @@ python manage_model_path.py -c "G:/venv/Comfy/ComfyUI" -e "G:/venv/_extra_models
 | `--lang` | `-l` | 表示言語（enまたはja） |
 | `folder_name` | - | 直接作成するフォルダ名（オプション） |
 
-### 対話モード
-
 引数なしで起動するとComfyUIのルートパスと追加モデルのルートパスの入力を求められます。
+
+## スクリーンショット
 
 ![screen](screen.jpg)
